@@ -3,6 +3,7 @@ import ChevronIcon from './icons/ChevronIcon/ChevronIcon';
 import DownRightArrowIcon from './icons/DownRightArrowIcon/DownRightArrowIcon';
 import ClearIcon from './icons/ClearIcon/ClearIcon';
 import CloseIcon from './icons/CloseIcon/CloseIcon';
+import LocationIcon from './icons/LocationIcon/LocationIcon';
 import HeartIcon from './icons/HeartIcon/HeartIcon';
 import ProfileIcon from './icons/ProfileIcon/ProfileIcon';
 import SearchIcon from './icons/SearchIcon/SearchIcon';
@@ -26,6 +27,7 @@ export {
   DownRightArrowIcon,
   ClearIcon,
   CloseIcon,
+  LocationIcon,
   HeartIcon,
   ProfileIcon,
   SearchIcon,
