@@ -18,6 +18,8 @@ import DeleteIcon from './icons/DeleteIcon/DeleteIcon';
 import TextField from './fields/TextField/TextField';
 import EmailField from './fields/EmailField/EmailField';
 import Logo from './Logo/Logo';
+import Header from './header-footer/Header';
+import Footer from './header-footer/Footer/Footer';
 import ClearField from './fields/TextField/ClearField/ClearField';
 
 export {
@@ -41,5 +43,7 @@ export {
   TextField,
   EmailField,
   Logo,
-  ClearField
+  ClearField,
+  Header,
+  Footer
 };

@@ -1,0 +1,38 @@
+@import (reference) "~seek-style-guide/theme";
+
+.list {
+  display: flex;
+}
+
+.link {
+  .nav_link();
+  font-size: unit(@standard-type-scale, rem);
+  height: (@grid-row-height * 3);
+  margin: 0 @grid-gutter-width;
+  display: flex;
+  align-items: center;
+  color: @sk-mid-gray-dark;
+}
+
+.link_isJobs {
+  box-shadow: inset 0 -2px @sk-black;
+  font-weight: @sk-bold;
+  color: @sk-black;
+
+  &:hover {
+    color: @sk-black;
+    cursor: auto;
+  }
+}
+
+.link_isLearning:hover {
+  color: #157e00; // accessible @sk-learning on @sk-gray-light
+}
+
+.link_isBusiness:hover {
+  color: #0f749f; // accessible @sk-business on @sk-gray-light
+}
+
+.link_isVolunteering:hover {
+  color: #d4006b; // accessible @sk-pink on @sk-gray-light
+}

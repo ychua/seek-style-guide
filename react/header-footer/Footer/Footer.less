@@ -1,0 +1,129 @@
+@import (reference) "~seek-style-guide/theme";
+
+@footer-vertical: ~"and (max-width: 767px)";
+@footer-horizontal: ~"and (min-width: 768px)";
+
+.footerLink() {
+  @media only screen @footer-vertical {
+    .touchableText();
+  }
+
+  @media only screen @footer-horizontal {
+    .rawText();
+    line-height: (@grid-row-height * 4);
+    height: (@grid-row-height * 4);
+    display: inline-block;
+    margin-right: @grid-gutter-width;
+  }
+}
+
+.backdrop {
+  background-color: @sk-footer;
+  position: absolute;
+  top: 0;
+  bottom: -300px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media only screen @footer-vertical {
+    padding: (@grid-row-height * 7) 0;
+  }
+
+  @media only screen @footer-horizontal {
+    padding: (@grid-row-height * 4) (@grid-gutter-width / 2) (@grid-row-height * 3);
+  }
+
+  @media only screen and (min-width: 1025px) {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: @grid-container-width;
+    margin: 0 auto;
+  }
+}
+
+.category {
+  @media only screen @footer-vertical {
+    display: none;
+  }
+
+  @media only screen @footer-horizontal {
+    flex-grow: 1;
+    flex-basis: (@grid-column-width * 3);
+  }
+}
+
+.copyright {
+  @media only screen @footer-vertical {
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 1 0 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media only screen @footer-horizontal {
+    margin-top: (@grid-row-height * 3);
+  }
+}
+
+.heading {
+  .standardText();
+  font-weight: @sk-bold;
+  margin-bottom: (@grid-row-height * 2);
+}
+
+.copyrightMessage {
+  .footerLink();
+}
+
+.navLink {
+  .footerLink();
+  .link();
+}
+
+.copyright .secondaryLink {
+  @media only screen @footer-vertical {
+    display: none;
+  }
+}
+
+.toggle {
+  position: absolute;
+  opacity: 0;
+}
+
+.toggleContainer {
+  display: none;
+}
+
+.chevron {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform .3s ease;
+  transform: translateZ(0) translateY(1px);
+  transform-origin: 50% 50%;
+}
+
+.chevronSvg {
+  fill: @sk-link;
+  width: 12px;
+  height: 12px;
+}
+
+.toggle:checked ~ .toggleContainer {
+  display: block;
+}
+
+.toggle:checked ~ .toggleLabel .chevron {
+  transform: translateZ(0) rotate(180deg);
+}
+
+.internationalPartnerCountry {
+  .footerLink();
+}
