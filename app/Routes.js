@@ -11,6 +11,7 @@ import Icons from 'Icons/Icons';
 import Typography from 'Typography/Typography';
 import Textarea from 'Textarea/Textarea';
 import Checkbox from 'Checkbox/Checkbox';
+import RadioButton from 'RadioButton/RadioButton';
 
 export default (
   <Route path="/" component={App}>
@@ -22,6 +23,7 @@ export default (
     <Route path="/textarea" component={Textarea} />
     <Route path="/dropdown" component={Dropdown} />
     <Route path="/checkbox" component={Checkbox} />
+    <Route path="/radiobutton" component={RadioButton} />
     <Route path="/icons" component={Icons} />
     <Route path="/typography" component={Typography} />
   </Route>

@@ -22,6 +22,7 @@ import ClearField from './fields/TextField/ClearField/ClearField';
 import Autosuggest from './fields/Autosuggest/Autosuggest';
 import Textarea from './fields/Textarea/Textarea';
 import Checkbox from './fields/Checkbox/Checkbox';
+import RadioButton from './fields/RadioButton/RadioButton';
 import ScreenReaderOnly from './Accessibility/ScreenReaderOnly';
 
 export {
@@ -49,6 +50,6 @@ export {
   Autosuggest,
   Textarea,
   Checkbox,
+  RadioButton,
   ScreenReaderOnly
 };
-
