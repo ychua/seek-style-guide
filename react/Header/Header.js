@@ -3,11 +3,13 @@ import styles from './Header.less';
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
+import Logo from '../Logo/Logo';
 import PartnerSites from './PartnerSites/PartnerSites';
 import Locales from './Locales/Locales';
 import Navigation from './Navigation/Navigation';
 import SignInRegister from './SignInRegister/SignInRegister';
 import UserAccount from './UserAccount/UserAccount';
+import ScreenReaderOnly from '../Accessibility/ScreenReaderOnly';
 
 const defaultLinkRenderer = props => (<a {...props} />);
 const employerLinkHref = locale => locale === 'NZ' ?
@@ -19,7 +21,7 @@ export default class Header extends Component {
   static propTypes = {
     locale: PropTypes.string,
     authenticated: PropTypes.bool,
-    userDisplayName: PropTypes.string.isRequired,
+    userName: PropTypes.string,
     linkRenderer: PropTypes.func,
     activeTab: PropTypes.string
   };
@@ -35,7 +37,7 @@ export default class Header extends Component {
     const {
       locale,
       authenticated,
-      userDisplayName,
+      userName,
       linkRenderer,
       activeTab
     } = this.props;
@@ -50,12 +52,13 @@ export default class Header extends Component {
         <section className={styles.root}>
           <div className={styles.banner}>
             <h1 data-automation="logo" className={styles.logo}>
+              <Logo svgClassName={styles.logoSvg} />
               {
                 linkRenderer({
                   'data-analytics': 'header:jobs',
                   className: styles.logoLink,
                   href: '/',
-                  children: 'SEEK'
+                  children: <ScreenReaderOnly>SEEK</ScreenReaderOnly>
                 })
               }
             </h1>
@@ -63,7 +66,7 @@ export default class Header extends Component {
               <div className={userClasses}>
                 {
                   authenticated ?
-                    <UserAccount userDisplayName={userDisplayName} linkRenderer={linkRenderer} /> :
+                    <UserAccount userName={userName} linkRenderer={linkRenderer} /> :
                     <SignInRegister linkRenderer={linkRenderer} />
                 }
                 <span className={styles.divider} />

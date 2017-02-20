@@ -8,12 +8,12 @@ import UserAccountMenu from '../UserAccountMenu/UserAccountMenu';
 export default class UserAccount extends Component {
 
   static propTypes = {
-    userDisplayName: PropTypes.string.isRequired,
+    userName: PropTypes.string.isRequired,
     linkRenderer: PropTypes.func.isRequired
   };
 
   render() {
-    const { userDisplayName, linkRenderer } = this.props;
+    const { userName, linkRenderer } = this.props;
 
     return (
       <nav
@@ -44,7 +44,7 @@ export default class UserAccount extends Component {
 
         <label data-automation="user-account-menu-toggle" className={styles.toggleLabel} htmlFor="user-account-menu-toggle">
           <ScreenReaderOnly>Show user menu: </ScreenReaderOnly>
-          <span className={styles.userDisplayName} data-automation="user-account-name" data-hj-masked={true}>{ userDisplayName }</span>
+          <span className={styles.userName} data-automation="user-account-name" data-hj-masked={true}>{ userName }</span>
           <ChevronIcon direction="down" className={styles.chevron} svgClassName={styles.chevronSvg} />
         </label>
 

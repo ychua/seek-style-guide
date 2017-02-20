@@ -73,8 +73,10 @@
 }
 
 .logo {
-  background: url('url!../Header/logo.svg') 0 0 no-repeat;
-  background-size: contain;
+  position: relative;
+}
+
+.logoSvg {
   height: 39px;
   width: 105px;
   @media @large-ia {
@@ -84,7 +86,8 @@
 }
 
 .logoLink {
-  display: inline-block;
+  position: absolute;
+  top: 0;
   text-indent: 100%;
   overflow: hidden;
   width: 100%;
