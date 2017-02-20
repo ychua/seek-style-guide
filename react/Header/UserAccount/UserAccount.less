@@ -22,7 +22,7 @@
   & ~ .toggleContainer {
     opacity:1;
     visibility: visible;
-    transform: translateZ(0);
+    transform: translateY(0);
     pointer-events: auto;
   }
 
@@ -31,7 +31,7 @@
   }
 
   & ~ .toggleLabel .chevron {
-    transform: translateZ(0) rotate(180deg);
+    transform: rotate(180deg);
   }
 }
 
@@ -41,8 +41,8 @@
   position: absolute;
   right: 0;
   transform-origin: 50% 0;
-  transform: translateZ(0) translateY(@grid-row-height * -3);
-  transition: all .25s cubic-bezier(0.020, 1.505, 0.745, 1.235);
+  transform: translateY(@grid-row-height * -3);
+  transition: opacity .25s cubic-bezier(0.020, 1.505, 0.745, 1.235), transform .25s cubic-bezier(0.020, 1.505, 0.745, 1.235);
   pointer-events: none;
   z-index: 1;
 }
@@ -86,7 +86,6 @@
 }
 
 .chevronSvg {
-  fill: currentColor;
   width: 14px;
   height: 14px;
 }

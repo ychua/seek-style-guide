@@ -1,6 +1,6 @@
 import styles from './PartnerSites.less';
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ScreenReaderOnly from '../../Accessibility/ScreenReaderOnly';
 
 const linksObject = {
@@ -25,7 +25,7 @@ const err = () => {
 const localeLens = links => locale => links ? links[locale] : err();
 const linkLens = locale => link => typeof locale[link] === 'string' && locale[link] || err();
 
-export default class PartnerSites extends React.Component {
+export default class PartnerSites extends Component {
   static propTypes = {
     locale: PropTypes.string.isRequired,
     linkRenderer: PropTypes.func.isRequired

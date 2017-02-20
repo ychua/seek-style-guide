@@ -43,7 +43,7 @@ export default class UserAccount extends Component {
         </div>
 
         <label data-automation="user-account-menu-toggle" className={styles.toggleLabel} htmlFor="user-account-menu-toggle">
-          <ScreenReaderOnly>Show user menu: </ScreenReaderOnly>
+          <ScreenReaderOnly>Show user menu</ScreenReaderOnly>
           <span className={styles.userName} data-automation="user-account-name" data-hj-masked={true}>{ userName }</span>
           <ChevronIcon direction="down" className={styles.chevron} svgClassName={styles.chevronSvg} />
         </label>
