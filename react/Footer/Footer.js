@@ -9,11 +9,12 @@ const defaultLinkRenderer = props => (<a {...props} />);
 
 export default class Footer extends Component {
   static propTypes = {
-    locale: PropTypes.string.isRequired,
+    locale: PropTypes.string,
     linkRenderer: PropTypes.func
   };
 
   static defaultProps = {
+    locale: 'AU',
     linkRenderer: defaultLinkRenderer
   };
 

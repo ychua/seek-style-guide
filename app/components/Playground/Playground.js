@@ -384,7 +384,7 @@ export default class Playground extends Component {
           </Card>
         </PageBlock>
 
-        <Footer locale="AU" />
+        <Footer />
       </div>
     );
   }
