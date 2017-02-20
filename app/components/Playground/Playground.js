@@ -17,7 +17,8 @@ import {
   Critical,
   Secondary,
   Strong,
-  Header
+  Header,
+  Footer
 } from 'seek-style-guide/react';
 
 import TextLink from './Atoms/TextLink/TextLink';
@@ -382,6 +383,8 @@ export default class Playground extends Component {
             </Section>
           </Card>
         </PageBlock>
+
+        <Footer locale="AU" />
       </div>
     );
   }
