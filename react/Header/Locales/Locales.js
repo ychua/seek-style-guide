@@ -1,7 +1,7 @@
 import styles from './Locales.less';
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import ScreenReaderOnly from '../../../Accessibility/ScreenReaderOnly';
+import ScreenReaderOnly from '../../Accessibility/ScreenReaderOnly';
 
 export default class Locales extends Component {
 

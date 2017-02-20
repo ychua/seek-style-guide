@@ -2,9 +2,9 @@ import styles from './UserAccountMenu.less';
 
 import React, { Component, PropTypes } from 'react';
 
-import ProfileIcon from '../../../icons/ProfileIcon/ProfileIcon';
-import HeartIcon from '../../../icons/HeartIcon/HeartIcon';
-import StarIcon from '../../../icons/StarIcon/StarIcon';
+import ProfileIcon from '../../icons/ProfileIcon/ProfileIcon';
+import HeartIcon from '../../icons/HeartIcon/HeartIcon';
+import StarIcon from '../../icons/StarIcon/StarIcon';
 
 const clearLocalStorage = () => {
   if (window && window.localStorage) {

@@ -1,8 +1,8 @@
 import styles from './UserAccount.less';
 import React, { Component, PropTypes } from 'react';
 
-import ChevronIcon from '../../../icons/ChevronIcon/ChevronIcon';
-import ScreenReaderOnly from '../../../Accessibility/ScreenReaderOnly';
+import ChevronIcon from '../../icons/ChevronIcon/ChevronIcon';
+import ScreenReaderOnly from '../../Accessibility/ScreenReaderOnly';
 import UserAccountMenu from '../UserAccountMenu/UserAccountMenu';
 
 export default class UserAccount extends Component {

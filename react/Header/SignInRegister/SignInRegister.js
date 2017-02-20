@@ -2,7 +2,7 @@ import styles from './SignInRegister.less';
 
 import React, { Component, PropTypes } from 'react';
 
-import ScreenReaderOnly from '../../../Accessibility/ScreenReaderOnly';
+import ScreenReaderOnly from '../../Accessibility/ScreenReaderOnly';
 
 export default class SignInRegister extends Component {
 
