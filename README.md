@@ -91,7 +91,7 @@ The `<Header>` component accepts the following props:
 - **userName:** User's display name, when authenticated
 - **activeTab:** Text of the active tab, e.g. `'Job Search'`
 - **divider:** `true` (default, renders a blue divider below the navigation tabs) or `false`
-- **linkRenderer:** Map function to allow custom rendering of links. The default implementation simply renders a standard link, spreading all props: `props => <a {...props} />`
+- **linkRenderer:** Function to allow custom rendering of links. The default implementation simply renders a standard link, spreading all props: `props => <a {...props} />`
 
 The `<Footer>` component accepts the following props:
 - **locale:** See above.
