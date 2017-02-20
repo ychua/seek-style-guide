@@ -208,22 +208,12 @@ class FooterLink extends Component {
             ...props
           })
         }
-        { partner && (<Partner partner={partner} />) }
+        {
+          partner ?
+            <span className={styles.partnerCountry}>{` — ${partner}`}</span> :
+            null
+        }
       </li>
-    );
-  }
-}
-
-class Partner extends Component {
-  static propTypes = {
-    partner: PropTypes.string
-  };
-
-  render() {
-    const { partner } = this.props;
-
-    return (
-      <span className={styles.internationalPartnerCountry}>{` — ${partner}`}</span>
     );
   }
 }
