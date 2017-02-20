@@ -22,7 +22,8 @@ export default class Navigation extends Component {
     linkRenderer: PropTypes.func.isRequired,
     activeTab: PropTypes.oneOf([
       'Job Search', '$150k+ Jobs', 'Profile', 'Company Reviews', 'Advice & Tips'
-    ])
+    ]),
+    divider: PropTypes.bool.isRequired
   };
 
   static defaultProps = {
@@ -30,7 +31,7 @@ export default class Navigation extends Component {
   };
 
   render() {
-    const { locale, linkRenderer, activeTab } = this.props;
+    const { locale, linkRenderer, activeTab, divider } = this.props;
     const isAU = locale === 'AU';
 
     const $150k = isAU ?
@@ -59,7 +60,13 @@ export default class Navigation extends Component {
       </li>) : null;
 
     return (
-      <nav aria-labelledby="MainNavigation" role="navigation" className={styles.root}>
+      <nav
+        aria-labelledby="MainNavigation"
+        role="navigation"
+        className={classnames({
+          [styles.root]: true,
+          [styles.divider]: divider
+        })}>
 
         <ScreenReaderOnly>
           <h1 id="MainNavigation">Primary Links</h1>

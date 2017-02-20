@@ -23,14 +23,16 @@ export default class Header extends Component {
     authenticated: PropTypes.bool,
     userName: PropTypes.string,
     linkRenderer: PropTypes.func,
-    activeTab: PropTypes.string
+    activeTab: PropTypes.string,
+    divider: PropTypes.bool
   };
 
   static defaultProps = {
     locale: 'AU',
     linkRenderer: defaultLinkRenderer,
     authenticated: null,
-    activeTab: null
+    activeTab: null,
+    divider: true
   };
 
   render() {
@@ -39,7 +41,8 @@ export default class Header extends Component {
       authenticated,
       userName,
       linkRenderer,
-      activeTab
+      activeTab,
+      divider
     } = this.props;
 
     const userClasses = classnames({
@@ -84,7 +87,12 @@ export default class Header extends Component {
             </div>
           </div>
           <div className={styles.navigation}>
-            <Navigation locale={locale} linkRenderer={linkRenderer} activeTab={activeTab} />
+            <Navigation
+              locale={locale}
+              linkRenderer={linkRenderer}
+              activeTab={activeTab}
+              divider={divider}
+            />
           </div>
           <div className={styles.topBanner}>
             <div className={styles.topBannerContent}>
