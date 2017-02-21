@@ -19,7 +19,7 @@ const employerLinkHref = locale => locale === 'NZ' ?
 export default class Header extends Component {
 
   static propTypes = {
-    locale: PropTypes.string,
+    locale: PropTypes.oneOf(['AU', 'NZ']),
     authenticated: PropTypes.bool,
     userName: PropTypes.string,
     linkRenderer: PropTypes.func,
