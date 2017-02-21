@@ -1,31 +1,8 @@
 @import (reference) "~seek-style-guide/theme";
-
-@footer-vertical: ~"and (max-width: 767px)";
-@footer-horizontal: ~"and (min-width: 768px)";
-@footer-classic: ~"and (min-width: 1025px)";
+@import (reference) "./Footer.common.less";
 
 .root {
   background-color: @sk-footer;
-}
-
-.footerLink() {
-  @media only screen @footer-vertical {
-    .touchableText();
-  }
-
-  @media only screen @footer-horizontal {
-    .rawText();
-    line-height: (@grid-row-height * 4);
-    height: (@grid-row-height * 4);
-    display: inline-block;
-    margin-right: @grid-gutter-width;
-
-    & + .partnerCountry {
-      margin-left: -@grid-gutter-width;
-      margin-right: 0;
-      display: inline;
-    }
-  }
 }
 
 .content {
@@ -48,17 +25,6 @@
   }
 }
 
-.category {
-  @media only screen @footer-vertical {
-    display: none;
-  }
-
-  @media only screen @footer-horizontal {
-    flex-grow: 1;
-    flex-basis: (@grid-column-width * 3);
-  }
-}
-
 .copyright {
   @media only screen @footer-vertical {
     display: flex;
@@ -73,21 +39,12 @@
   }
 }
 
-.heading {
-  .standardText();
-  font-weight: @sk-bold;
-  margin-bottom: (@grid-row-height * 2);
-}
-
-.partnerCountry,
-.copyrightMessage {
+.copyrightLink {
   .footerLink();
-}
 
-.navLink {
-  .footerLink();
-  .link();
-  color: @sk-link-on-mid-gray-light;
+  @media only screen @footer-horizontal {
+    margin-right: @grid-gutter-width;
+  }
 }
 
 .copyright .secondaryLink {
@@ -96,32 +53,11 @@
   }
 }
 
-.toggle {
-  position: absolute;
-  opacity: 0;
-}
-
-.toggleContainer {
-  display: none;
-}
-
-.chevron {
-  display: inline-block;
-  margin-left: 6px;
-  transition: transform .3s ease;
-  transform: translateY(1px);
-  transform-origin: 50% 50%;
-}
-
-.chevronSvg {
-  width: 12px;
-  height: 12px;
-}
-
-.toggle:checked ~ .toggleContainer {
-  display: block;
-}
-
-.toggle:checked ~ .toggleLabel .chevron {
-  transform: rotate(180deg);
+.copyrightMessage {
+  @media only screen @footer-horizontal {
+    display: inline-block;
+  }
+  @media only screen @footer-vertical {
+    .touchableText();
+  }
 }
