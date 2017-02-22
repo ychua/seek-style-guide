@@ -37,21 +37,6 @@ const items = [
 ];
 
 export default function Navigation({ locale, linkRenderer, activeTab, divider }) {
-  const renderLink = ({ specificLocale = locale, analytics, name, ...restProps }, key) => (
-    (specificLocale === locale) ?
-      linkRenderer({
-        children: name,
-        'data-analytics': analytics,
-        className: classnames({
-          [styles.link]: true,
-          [styles.link_isActive]: name === activeTab
-        }),
-        key,
-        ...restProps
-      }) :
-      null
-  );
-
   return (
     <nav
       aria-labelledby="MainNavigation"
@@ -66,9 +51,24 @@ export default function Navigation({ locale, linkRenderer, activeTab, divider })
       </ScreenReaderOnly>
 
       <ul className={styles.list} data-automation="nav-tabs">
-        <li className={styles.item}>
-          { items.map(renderLink) }
-        </li>
+        { items.map(({ specificLocale = locale, analytics, name, ...restProps }, i) => (
+            (specificLocale === locale) ?
+              <li className={styles.item} key={i}>
+                {
+                  linkRenderer({
+                    children: name,
+                    'data-analytics': analytics,
+                    className: classnames({
+                      [styles.link]: true,
+                      [styles.link_isActive]: name === activeTab
+                    }),
+                    ...restProps
+                  })
+                }
+              </li> :
+              null
+          ))
+        }
       </ul>
 
     </nav>
