@@ -1,6 +1,6 @@
 import styles from './PartnerSites.less';
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import ScreenReaderOnly from '../../Accessibility/ScreenReaderOnly';
 
 const linksObject = {
@@ -25,62 +25,59 @@ const err = () => {
 const localeLens = links => locale => links ? links[locale] : err();
 const linkLens = locale => link => typeof locale[link] === 'string' && locale[link] || err();
 
-export default class PartnerSites extends Component {
-  static propTypes = {
-    locale: PropTypes.string.isRequired,
-    linkRenderer: PropTypes.func.isRequired
-  };
+export default function PartnerSites({ locale, linkRenderer }) {
+  const linkView = linkLens(localeLens(linksObject)(locale));
 
-  render() {
-    const { locale, linkRenderer } = this.props;
-    const linkView = linkLens(localeLens(linksObject)(locale));
+  return (
+    <nav role="navigation" aria-labelledby="PartnerSites">
 
-    return (
-      <nav role="navigation" aria-labelledby="PartnerSites">
+      <ScreenReaderOnly>
+        <h1 id="PartnerSites">Partner Sites</h1>
+      </ScreenReaderOnly>
 
-        <ScreenReaderOnly>
-          <h1 id="PartnerSites">Partner Sites</h1>
-        </ScreenReaderOnly>
-
-        <ul className={styles.list}>
-          <li>
-            <span className={`${styles.link} ${styles.link_isJobs}`} title="SEEK Jobs">Jobs</span>
-          </li>
-          <li>
-            {
-              linkRenderer({
-                'data-analytics': 'header:courses',
-                className: `${styles.link} ${styles.link_isLearning}`,
-                href: linkView('learningUrl'),
-                title: 'SEEK Learning',
-                children: 'Courses'
-              })
-            }
-          </li>
-          <li>
-            {
-              linkRenderer({
-                'data-analytics': 'header:business+for+sale',
-                className: `${styles.link} ${styles.link_isBusiness}`,
-                href: linkView('businessUrl'),
-                title: 'SEEK Business',
-                children: 'Businesses for sale'
-              })
-            }
-          </li>
-          <li>
-            {
-              linkRenderer({
-                'data-analytics': 'header:volunteering',
-                className: `${styles.link} ${styles.link_isVolunteering}`,
-                href: linkView('volunteerUrl'),
-                title: 'SEEK Volunteer',
-                children: 'Volunteering'
-              })
-            }
-          </li>
-        </ul>
-      </nav>
-    );
-  }
+      <ul className={styles.list}>
+        <li>
+          <span className={`${styles.link} ${styles.link_isJobs}`} title="SEEK Jobs">Jobs</span>
+        </li>
+        <li>
+          {
+            linkRenderer({
+              'data-analytics': 'header:courses',
+              className: `${styles.link} ${styles.link_isLearning}`,
+              href: linkView('learningUrl'),
+              title: 'SEEK Learning',
+              children: 'Courses'
+            })
+          }
+        </li>
+        <li>
+          {
+            linkRenderer({
+              'data-analytics': 'header:business+for+sale',
+              className: `${styles.link} ${styles.link_isBusiness}`,
+              href: linkView('businessUrl'),
+              title: 'SEEK Business',
+              children: 'Businesses for sale'
+            })
+          }
+        </li>
+        <li>
+          {
+            linkRenderer({
+              'data-analytics': 'header:volunteering',
+              className: `${styles.link} ${styles.link_isVolunteering}`,
+              href: linkView('volunteerUrl'),
+              title: 'SEEK Volunteer',
+              children: 'Volunteering'
+            })
+          }
+        </li>
+      </ul>
+    </nav>
+  );
 }
+
+PartnerSites.propTypes = {
+  locale: PropTypes.string.isRequired,
+  linkRenderer: PropTypes.func.isRequired
+};
