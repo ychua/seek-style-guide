@@ -19,15 +19,15 @@ const items = [
     specificLocale: 'AU'
   },
   {
+    name: 'Profile',
+    href: '/profile/',
+    analytics: 'header:profile'
+  },
+  {
     name: 'Company Reviews',
     href: '/companies/',
     analytics: 'header:companies',
     specificLocale: 'AU'
-  },
-  {
-    name: 'Profile',
-    href: '/profile/',
-    analytics: 'header:profile'
   },
   {
     name: 'Advice & Tips',
