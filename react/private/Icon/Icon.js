@@ -3,12 +3,12 @@ import styles from './Icon.less';
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
-export default function Icon({ markup, className, svgClassName, ...restProps }) {
+export default function Icon({ markup, className, svgClassName, shadow, ...restProps }) {
   const svgWithClasses = markup
     .replace('<svg ', `<svg class="${classnames(styles.svg, svgClassName)}" `);
   const combinedProps = {
     ...restProps,
-    className: classnames(styles.root, className)
+    className: classnames(styles.root, className, { [styles.shadow]: shadow })
   };
 
   return (
@@ -19,7 +19,8 @@ export default function Icon({ markup, className, svgClassName, ...restProps }) 
 Icon.propTypes = {
   markup: PropTypes.string.isRequired,
   svgClassName: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
+  shadow: PropTypes.bool
 };
 
 Icon.defaultProps = {

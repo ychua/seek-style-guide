@@ -9,3 +9,18 @@
   width: 16px;
   height: 16px;
 }
+
+.shadow {
+  position: relative;
+  &:after {
+    content: '';
+    width: 45%;
+    height: 6%;
+    position: absolute;
+    left: 50%;
+    margin-left: -23%;
+    border-radius: 100%;
+    bottom: -14%;
+    background: @sk-gray-medium;
+  }
+}
